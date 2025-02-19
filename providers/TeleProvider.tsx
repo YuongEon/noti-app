@@ -1,9 +1,10 @@
 'use client'
 import { useEffect, ReactNode } from 'react'
 import axios from 'axios'
+import { telegram } from '@/constant/telegram'
 
 const TeleProvider = ({ children }: { children: ReactNode }) => {
-	const teleToken = process.env.TELEGRAM_BOT_TOKEN
+	const teleToken = telegram.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN
 	const sendMessage = async () => {
 		const response = await axios.get(
 			`https://api.telegram.org/bot${teleToken}/getUpdates`
